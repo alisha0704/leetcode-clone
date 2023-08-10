@@ -5,13 +5,29 @@ import Link from "next/link";
 import {AiFillYoutube } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5';
 import  YouTube from "react-youtube";
+import  { useEffect, useState } from "react";
 
 type ProblemsTableProps = {
     
 };
 
 const ProblemsTable:React.FC<ProblemsTableProps> = () => {
-    
+    const [youtubePlayer, setYoutubePlayer] = useState({
+		isOpen: false,
+		videoId: "",
+	});
+    const closeModal = () => {
+		setYoutubePlayer({ isOpen: false, videoId: "" });
+	};
+    useEffect(() => {
+		const handleEsc = (e: KeyboardEvent) => {
+			if (e.key === "Escape") closeModal();
+		};
+		window.addEventListener("keydown", handleEsc);
+
+		return () => window.removeEventListener("keydown", handleEsc);
+	}, []);
+
     return (
         <>
 			<tbody className='text-white'>
@@ -46,6 +62,9 @@ const ProblemsTable:React.FC<ProblemsTableProps> = () => {
                                     <AiFillYoutube
                                     fontSize={"30"}
                                     className='cursor-pointer hover:text-red-600'
+                                    onClick={() =>
+                                        setYoutubePlayer({ isOpen: true, videoId: doc.videoId as string })
+                                    }
                                     />
                                 ) : (
                                     <p className="text-gray-400">Coming Soon</p>
@@ -55,17 +74,19 @@ const ProblemsTable:React.FC<ProblemsTableProps> = () => {
                     );
                     })}
                     </tbody>
+                    {youtubePlayer.isOpen && (
                     <tfoot className='fixed top-0 left-0 h-screen w-screen flex items-center justify-center'>
-					<div className='bg-black z-10 opacity-70 top-0 left-0 w-screen h-screen absolute'></div>
+					<div className='bg-black z-10 opacity-70 top-0 left-0 w-screen h-screen absolute'onClick={closeModal}></div>
 					<div className='w-full z-50 h-full px-6 relative max-w-4xl'>
 						<div className='w-full h-full flex items-center justify-center relative'>
 							<div className='w-full relative'>
 								<IoClose
 									fontSize={"35"}
 									className='cursor-pointer absolute -top-16 right-0'
+                                    onClick={closeModal}
 								/>
 								<YouTube
-									videoId={"xty7fc-kOTU"}
+									videoId={"youtubePlayer.videoId"}
 									loading='lazy'
 									iframeClassName='w-full min-h-[500px]'
 								/>
@@ -73,6 +94,7 @@ const ProblemsTable:React.FC<ProblemsTableProps> = () => {
 						</div>
 					</div>
 				</tfoot>
+                )}
     </>
                     );
                 };

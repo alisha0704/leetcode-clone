@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from "react";
 import { authModalState } from '@/atoms/authModalAtom';
 import { useSetRecoilState } from "recoil";
 
@@ -11,7 +12,6 @@ const Signup:React.FC<SignupProps> = () => {
     const handleClick = () => {
         setAuthModalState((prev) => ({...prev, type:"login"}));
     };
-    
     return (
     <form className='space-y-6 px-6 pb-4'>
     <h3 className="text-xl font-medium text-white">Register to LeetClone</h3>
@@ -24,7 +24,8 @@ const Signup:React.FC<SignupProps> = () => {
         bg-gray-500 border-gray-400 placeholder-gray-400 text-white"   placeholder="name@company.com"/>
     </div>
     <div> 
-        <label htmlFor="displayName" className="text-sm font-medium block mb-2 text-gray-300">
+        <label 
+        htmlFor="displayName" className="text-sm font-medium block mb-2 text-gray-300">
             Display Name
         </label>
         <input type="displayName" name="displayName" id="displayName" className="

@@ -17,4 +17,4 @@ const Workspace: React.FC<WorkspaceProps> = ({ problem }) => {
 		</Split>
 	);
 };
-export default Workspace;
+export default Workspace;   

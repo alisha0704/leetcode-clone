@@ -10,10 +10,11 @@ type PlaygroundProps = {
 };
 
 const Playground:React.FC<PlaygroundProps> = () => {
+    const handleSubmit = async () => {}
     
     return (
         <>
-        <div className='flex flex-col bg-dark-layer-1 relative'>
+        <div className='flex flex-col bg-dark-layer-1 relative overflow-x-hidden '>
         <PreferenceNav/>
         <Split className='h-[calc(100vh-94px)]' direction='vertical' sizes={[60,40]} minSize={60} >
             <div className='w-full overflow-auto'>
@@ -72,7 +73,7 @@ const Playground:React.FC<PlaygroundProps> = () => {
                 </div>
                 </div>
         </Split>
-        <EditorFooter/>
+        <EditorFooter handleSubmit={handleSubmit}/>
         </div>
         </>
     )

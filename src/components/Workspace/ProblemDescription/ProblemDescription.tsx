@@ -1,7 +1,7 @@
-import CircleSkeleton from "@/components/Skeletons/CircleSkeleton";
-import RectangleSkeleton from "@/components/Skeletons/RectangleSkeleton";
+
 import { auth, firestore } from "@/firebase/firebase";
-import { DBProblem, Problem } from "@/utils/types/problem";
+import { Problem } from "@/mockProblems/problems";
+// import { DBProblem} from "@/utils/types/problem";
 import { arrayRemove, arrayUnion, doc, getDoc, runTransaction, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -49,7 +49,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 						likes: problemDoc.data().likes - 1,
 					});
 
-					setCurrentProblem((prev) => (prev ? { ...prev, likes: prev.likes - 1 } : null));
+					setCurrentProblem((prev: any) => (prev ? { ...prev, likes: prev.likes - 1 } : null));
 					setData((prev) => ({ ...prev, liked: false }));
 				} else if (disliked) {
 					transaction.update(userRef, {
@@ -61,7 +61,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 						dislikes: problemDoc.data().dislikes - 1,
 					});
 
-					setCurrentProblem((prev) =>
+					setCurrentProblem((prev: any) =>
 						prev ? { ...prev, likes: prev.likes + 1, dislikes: prev.dislikes - 1 } : null
 					);
 					setData((prev) => ({ ...prev, liked: true, disliked: false }));
@@ -72,7 +72,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 					transaction.update(problemRef, {
 						likes: problemDoc.data().likes + 1,
 					});
-					setCurrentProblem((prev) => (prev ? { ...prev, likes: prev.likes + 1 } : null));
+					setCurrentProblem((prev: any) => (prev ? { ...prev, likes: prev.likes + 1 } : null));
 					setData((prev) => ({ ...prev, liked: true }));
 				}
 			}
@@ -98,7 +98,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 					transaction.update(problemRef, {
 						dislikes: problemDoc.data().dislikes - 1,
 					});
-					setCurrentProblem((prev) => (prev ? { ...prev, dislikes: prev.dislikes - 1 } : null));
+					setCurrentProblem((prev:any) => (prev ? { ...prev, dislikes: prev.dislikes - 1 } : null));
 					setData((prev) => ({ ...prev, disliked: false }));
 				} else if (liked) {
 					transaction.update(userRef, {
@@ -109,7 +109,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 						dislikes: problemDoc.data().dislikes + 1,
 						likes: problemDoc.data().likes - 1,
 					});
-					setCurrentProblem((prev) =>
+					setCurrentProblem((prev:any) =>
 						prev ? { ...prev, dislikes: prev.dislikes + 1, likes: prev.likes - 1 } : null
 					);
 					setData((prev) => ({ ...prev, disliked: true, liked: false }));
@@ -120,7 +120,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 					transaction.update(problemRef, {
 						dislikes: problemDoc.data().dislikes + 1,
 					});
-					setCurrentProblem((prev) => (prev ? { ...prev, dislikes: prev.dislikes + 1 } : null));
+					setCurrentProblem((prev:any) => (prev ? { ...prev, dislikes: prev.dislikes + 1 } : null));
 					setData((prev) => ({ ...prev, disliked: true }));
 				}
 			}
@@ -214,11 +214,11 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solve
 
 						{loading && (
 							<div className='mt-3 flex space-x-2'>
-								<RectangleSkeleton />
+								{/* <RectangleSkeleton />
 								<CircleSkeleton />
 								<RectangleSkeleton />
 								<RectangleSkeleton />
-								<CircleSkeleton />
+								<CircleSkeleton /> */}
 							</div>
 						)}
 

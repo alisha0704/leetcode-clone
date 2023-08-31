@@ -1,4 +1,4 @@
-import { Problem } from '@/mockProblems/problems';
+import { Problem } from '@/types/problem';
 import assert from 'assert';
 
 const starterCodeTwoSum = `function twoSum(nums,target){
@@ -58,7 +58,7 @@ export const twoSum: Problem = {
 		},
 	],
 	constraints: ``,
-	handlerFunction: () => true,
+	handlerFunction: handlerTwoSum,
 	starterCode: starterCodeTwoSum,
 	order: 1,
 	starterFunctionName: "function twoSum(",

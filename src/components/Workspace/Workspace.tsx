@@ -6,7 +6,7 @@ type WorkspaceProps = {
     problem: Problem
 };
 
-const Workspace: React.FC<WorkspaceProps> = ({ problem }) => {
+const Workspace: React.FC<WorkspaceProps> = () => {
 
 	return (
 		<Split className='split' minSize={0}>

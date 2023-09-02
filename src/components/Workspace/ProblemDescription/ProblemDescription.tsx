@@ -1,6 +1,6 @@
 
 import { auth, firestore } from "@/firebase/firebase";
-import { Problem } from "@/mockProblems/problems";
+import { Problem } from "@/types/problem";
 // import { DBProblem} from "@/utils/types/problem";
 import { arrayRemove, arrayUnion, doc, getDoc, runTransaction, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -12,10 +12,9 @@ import { toast } from "react-toastify";
 
 type ProblemDescriptionProps = {
 	problem: Problem;
-	_solved: boolean;
 };
 
-const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem, _solved }) => {
+const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem}) => {
 	const [user] = useAuthState(auth);
 	const { currentProblem, loading, problemDifficultyClass, setCurrentProblem } = useGetCurrentProblem(problem.id);
 	const { liked, disliked, solved, setData, starred } = useGetUsersDataOnProblem(problem.id);

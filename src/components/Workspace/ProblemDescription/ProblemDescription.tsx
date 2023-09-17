@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 
 type ProblemDescriptionProps = {
 	problem: Problem;
-	solution: SecurityPolicyViolationEventDisposition;
 };
 
 const ProblemDescription: React.FC<ProblemDescriptionProps> = ({ problem}) => {

@@ -7,14 +7,14 @@ type ResetPasswordProps = {
 const ResetPassword:React.FC<ResetPasswordProps> = () => {
     
     return (
-        <form className='space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8' >
+        <form className='space-y-6 px-6 lg:px-9 pb-4 sm:pb-6 xl:pb-8' >
         <h3 className='text-xl font-medium  text-white'>Reset Password</h3>
         <p className='text-sm text-white '>
             Forgotten your password? Enter e-mail address below, and we&apos;ll send you an e-mail allowing you
             to reset it.
         </p>
         <div>
-            <label htmlFor='email' className='text-sm font-medium block mb-3 text-gray-300'>
+            <label htmlFor='email' className='text-sm font-medium block mb-4 text-gray-300'>
                Enter Your email
             </label>
             <input

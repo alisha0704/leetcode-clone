@@ -30,7 +30,7 @@ const Timer:React.FC<TimerProps> = () => {
 	}, [showTimer]);
     return <div>
         {showTimer ? (
-            <div className='flex items-center space-x-2 bg-dark-fill-3 py-1.5 cursor-pointer rounded hover:bg-dark-fill-2'>
+            <div className='flex items-center space-x-3 bg-dark-fill-3 py-1.5 cursor-pointer rounded hover:bg-dark-fill-2'>
                <div>{formatTime(time)}</div>
             <FiRefreshCcw
             onClick={() => {
@@ -40,7 +40,7 @@ const Timer:React.FC<TimerProps> = () => {
             />
             </div>) : 
             (
-                <div className='flex items-center p-1 h-8 hover:bg-dark-fill-3 rounded cursor-pointer'
+                <div className='flex items-center p-2 h-8 hover:bg-dark-fill-3 rounded cursor-pointer'
                 onClick={() => setShowTimer(true)}
                 >
                     <svg

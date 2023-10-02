@@ -30,7 +30,7 @@ const Timer:React.FC<TimerProps> = () => {
 	}, [showTimer]);
     return <div>
         {showTimer ? (
-            <div className='flex items-center space-x-3 bg-dark-fill-3 py-1.5 cursor-pointer rounded hover:bg-dark-fill-2'>
+            <div className='flex items-center space-x-4 bg-dark-fill-3 py-1.5 cursor-pointer rounded hover:bg-dark-fill-2'>
                <div>{formatTime(time)}</div>
             <FiRefreshCcw
             onClick={() => {
@@ -49,7 +49,7 @@ const Timer:React.FC<TimerProps> = () => {
 						width='1em'
 						height='1em'
 						fill='currentColor'
-						className='h-6 w-6'
+						className='h-7 w-7'
 					>
 						<path
 							fillRule='evenodd'

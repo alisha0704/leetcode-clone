@@ -40,7 +40,7 @@ const Timer:React.FC<TimerProps> = () => {
             />
             </div>) : 
             (
-                <div className='flex items-center p-4 h-8 hover:bg-dark-fill-6 rounded cursor-pointer'
+                <div className='flex items-center p-5 h-9 hover:bg-dark-fill-7 rounded cursor-pointer'
                 onClick={() => setShowTimer(true)}
                 >
                     <svg

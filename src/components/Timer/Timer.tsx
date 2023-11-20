@@ -23,7 +23,7 @@ const Timer:React.FC<TimerProps> = () => {
 		if (showTimer) {
 			intervalId = setInterval(() => {
 				setTime((time: number) => time + 1);
-			}, 1000);
+			}, 900);
 		}
 
 		return () => clearInterval(intervalId);

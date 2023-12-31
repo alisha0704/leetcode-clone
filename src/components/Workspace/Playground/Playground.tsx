@@ -27,9 +27,9 @@ const Playground:React.FC<PlaygroundProps> = () => {
             </div>
             <div className='w-full px-5 overflow-auto'>
                 {/* TestCase Heading */}
-                <div className='flex h-10 items-center space-x-6'>
+                <div className='flex h-10 items-center space-x-4'>
                     <div className='relative flex h-full flex-col justify-center cursor-pointer'>
-                        <div className='text-sm font-medium leading-5 text-white'>
+                        <div className='text-base font-medium leading-5 text-white'>
                             testcases 
                         </div>
                         <hr className='absolute bottom-0 h-0.5 w-16 rounded-full border-none bg-white'/>

@@ -32,12 +32,12 @@ const Playground:React.FC<PlaygroundProps> = () => {
                         <div className='text-base font-medium leading-5 text-white'>
                             testcases 
                         </div>
-                        <hr className='absolute bottom-0 h-0.5 w-16 rounded-full border-none bg-white'/>
+                        <hr className='absolute bottom-0 h-0.5 w-20 rounded-full border-none bg-white'/>
                     </div>
                 </div>
                 <div className='flex'>
                    {/* case 1 */}
-                    <div className='mr-2 items-start mt-3 text-white'>
+                    <div className='mr-2 items-start mt-4 text-white'>
                         <div className='flex flex-wrap items-center gap-y-4'>
                             <div className='font-medium items-center transition-all focus:outline-none inline-flex bg-dark-fill-3 hover:bg-dark-fill-3 relative rounded-lg px-4 py-1 cursor-pointer whitespace-nowrap '>
                                 Case 1
